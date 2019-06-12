@@ -19,11 +19,11 @@
 function GameObject(attributes) {
   this.createdAt = attributes.createdAt;
   this.name = attributes.name;
-  this.dimensions = attributes.dimensions
+  this.dimensions = attributes.dimensions;
 }
 
 GameObject.prototype.destroy =  function () {
-  return `${this.name} was removed from the game.`;
+  return `${this.name} was removed from the game.`
 }
 
 /*
@@ -60,15 +60,15 @@ CharacterStats.prototype.takeDamage = function() {
 */
 
 function Humanoid (attributes) {
-  CharacterStats.call(this, attributes)
-  this.team = attributes.team
+  CharacterStats.call(this, attributes);
+  this.team = attributes.team;
+  this.weapons = attributes.weapons;
+  this.language = attributes.language;
 }
 Humanoid.prototype = Object.create(CharacterStats.prototype)
-Humanoid.prototype.greet = function() {}
-
-// new Humanoid({
-//   name: 'Emily'
-// })
+Humanoid.prototype.greet = function() {
+  return `${this.name} offers a greeting in ${this.language}.`
+}
 
 // Test you work by un-commenting these 3 objects and the list of console logs below:
 
